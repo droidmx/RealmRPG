@@ -1,4 +1,4 @@
-package tiffit.realmrpg;
+package tiffit.realmrpg.commands;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,6 +30,7 @@ public abstract class Command {
 	}
 
 	public static void RegisterCommands() {
+		commands.add(new CharacterSelectCommand());
 	}
 
 	protected void createBuilder() {
