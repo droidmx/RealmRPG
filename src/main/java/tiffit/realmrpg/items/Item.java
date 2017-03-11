@@ -1,4 +1,4 @@
-package tiffit.realmrpg;
+package tiffit.realmrpg.items;
 
 public class Item {
     
