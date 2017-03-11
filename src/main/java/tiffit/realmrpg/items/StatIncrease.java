@@ -6,11 +6,12 @@ public class StatIncrease {
 		LIFE, MANA, ATT, DEF, SPD, DEX, VIT, WIS;
 	}
 	
-	private Stat stat;
-	private int value;
+	private final Stat stat;
+	private final int value;
 	
 	public StatIncrease(Stat stat, int value) {
 		this.stat = stat;
+		this.value = value;
 	}
 
 	public Stat getStat() {

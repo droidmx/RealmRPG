@@ -1,7 +1,7 @@
 package tiffit.realmrpg.commands;
 
 import java.util.List;
-
+import tiffit.realmrpg.data.Character;
 import net.dv8tion.jda.core.entities.User;
 import tiffit.realmrpg.data.PlayerData;
 
@@ -15,7 +15,19 @@ public class CharacterSelectCommand extends Command{
 	@Override
 	public String performCommand(User user, List<User> mentions, String[] args) {
 		PlayerData data = PlayerData.getData(user.getId());
-		return "You have **" + data.char_slots + "** character slots!";
+		String retstr = "";
+		int empty_slots = data.char_slots - data.chars.size();
+		for(Character chr : data.chars){
+			retstr += "```";
+			retstr += chr.clss.toString();
+			retstr += "```";
+		}
+		for(int i = 0; i < empty_slots; i++){
+			retstr += "```";
+			retstr += "Empty Char Slot " + (data.chars.size() + i + 1);
+			retstr += "```";
+		}
+		return retstr;
 	}
 
 }

@@ -6,9 +6,9 @@ import java.util.List;
 import net.dv8tion.jda.core.entities.User;
 
 public abstract class Command {
-	protected StringBuilder builder;
 
-	public Command() {
+	public static void RegisterCommands() {
+		commands.add(new CharacterSelectCommand());
 	}
 
 	public abstract String getCommand();
@@ -20,25 +20,9 @@ public abstract class Command {
 	public String getUsage() {
 		return "rpg_" + getCommand();
 	}
-
-	public boolean formatted() {
-		return true;
-	}
-
+	
 	public boolean isAcceptable(String command) {
 		return command.equals(getCommand());
-	}
-
-	public static void RegisterCommands() {
-		commands.add(new CharacterSelectCommand());
-	}
-
-	protected void createBuilder() {
-		builder = new StringBuilder();
-	}
-
-	protected void append(String string) {
-		builder.append(string + "\n");
 	}
 
 	public boolean isHidden() {

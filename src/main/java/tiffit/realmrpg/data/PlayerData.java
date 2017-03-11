@@ -5,6 +5,8 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -17,6 +19,7 @@ public class PlayerData {
 	/**Discord User ID*/
 	public transient final String ID; 
 	public int char_slots = 1;
+	public List<Character> chars = new ArrayList<Character>();
 	
 	public PlayerData(String id) {
 		ID = id;

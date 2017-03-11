@@ -20,6 +20,11 @@ public class Character {
 	}
 	
 	public final ClassEnum clss;
+	public int equip;
+	public int ability;
+	public int armor;
+	public int ring;
+	public int[] inventory = new int[8];
 	
 	public Character(ClassEnum clss) {
 		this.clss = clss;
