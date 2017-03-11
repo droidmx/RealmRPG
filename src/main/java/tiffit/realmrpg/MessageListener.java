@@ -2,6 +2,7 @@ package tiffit.realmrpg;
 
 import net.dv8tion.jda.core.entities.Message;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
+import tiffit.realmrpg.commands.Command;
 
 public class MessageListener extends net.dv8tion.jda.core.hooks.ListenerAdapter {
 	private static boolean MAINTAINANCE_MODE = false;
