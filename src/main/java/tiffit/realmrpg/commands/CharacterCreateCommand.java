@@ -2,6 +2,7 @@ package tiffit.realmrpg.commands;
 
 import java.util.List;
 import tiffit.realmrpg.data.Character;
+import tiffit.realmrpg.data.Character.ClassEnum;
 import net.dv8tion.jda.core.entities.User;
 import tiffit.realmrpg.data.PlayerData;
 
@@ -18,7 +19,7 @@ public class CharacterCreateCommand extends Command {
 		String retstr = "";
 		int empty_slots = data.char_slots - data.chars.size();
 		
-        if (empty_slots = 0) {
+        if (empty_slots == 0) {
             retstr = "You have no open character slots!";
         } else {
             if (args.length >= 1) {
