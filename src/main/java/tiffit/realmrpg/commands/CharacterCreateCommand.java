@@ -29,11 +29,11 @@ public class CharacterCreateCommand extends Command {
                     data.chars.add(new Character(clss));
                     data.save();
                     retstr = "Created a new " + args[0] + "!";
-                catch (IllegalArgumentException e) {
+                } catch (IllegalArgumentException e) {
                     retstr = "Please enter a valid class!";
                 }
             } else {
-                retStr = "To create a character, use `rpg_create [class]`!";
+                retstr = "To create a character, use `rpg_create [class]`!";
             }
         }
 		return retstr;
