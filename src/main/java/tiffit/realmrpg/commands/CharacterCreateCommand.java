@@ -26,7 +26,7 @@ public class CharacterCreateCommand extends Command {
                 ClassEnum clss;
                 try {
                     clss = ClassEnum.valueOf(args[0]);
-                    data.chars.add(new Character(clss));
+                    data.chars.add(new Character(clss, 0));
                     data.save();
                     retstr = "Created a new " + args[0] + "!";
                 } catch (IllegalArgumentException e) {

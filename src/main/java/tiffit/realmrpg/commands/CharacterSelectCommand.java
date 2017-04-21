@@ -19,7 +19,10 @@ public class CharacterSelectCommand extends Command{
 		int empty_slots = data.char_slots - data.chars.size();
 		for(Character chr : data.chars){
 			retstr += "```";
-			retstr += chr.clss.toString();
+			retstr += "Level " + chr.getLevel() + " " + chr.clss.toString() + " - ";
+			retstr += ((chr.getLevel() != 20) ?
+					(chr.getExpThisLevel() + "/" + Character.expThisLevel(chr.getLevel()) + " Experience") :
+					(chr.getFame() + " Fame"));
 			retstr += "```";
 		}
 		for(int i = 0; i < empty_slots; i++){

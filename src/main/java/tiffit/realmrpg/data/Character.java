@@ -48,4 +48,25 @@ public class Character {
 		}
 		return 20;
 	}
+	
+	public int getExpThisLevel() {
+		if (this.getLevel() != 20) {
+			int tempExp = this.exp;
+			for (int i = 0; i < 20; i++) {
+				if (tempExp > 50 + i*100) {
+					tempExp -= 50 + i*100;
+				} else {
+					return tempExp;
+				}
+			}
+		} return 0;
+	}
+	
+	public int getFame() {
+		return 0;
+	}
+	
+	public static int expThisLevel(int l) {
+		return (l-1)*100 + 50;
+	}
 }
