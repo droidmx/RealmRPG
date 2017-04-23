@@ -27,14 +27,14 @@ public class Character {
 	public int ring;
 	public int[] inventory = new int[8];
 	
-	public int exp;
+	public long exp;
 	
 	public Character(ClassEnum clss, int exp) {
 		this.clss = clss;
 		this.exp = exp;
 	}
 	
-	public int getExp() {
+	public long getExp() {
 		return this.exp;
 	}
 	
@@ -51,19 +51,35 @@ public class Character {
 	
 	public int getExpThisLevel() {
 		if (this.getLevel() != 20) {
-			int tempExp = this.exp;
+			long tempExp = this.exp;
 			for (int i = 0; i < 20; i++) {
 				if (tempExp > 50 + i*100) {
 					tempExp -= 50 + i*100;
 				} else {
-					return tempExp;
+					return (int) tempExp;
 				}
 			}
 		} return 0;
 	}
 	
 	public int getFame() {
-		return 0;
+		if (this.exp <= 20000) {
+			return (int) (this.exp/2000);
+		} else if (this.exp <= 45000) {
+			return (int) (20 + (this.exp-20000)/500);
+		} else if (this.exp <= 45400) {
+			return (int) (70 + (this.exp-45000)/400);
+		} else if (this.exp <= 79734) {
+			return (int) (71 + (this.exp-45400)*1000/3);
+		} else if (this.exp <= 80100) {
+			return (int) (174 + (this.exp-79734)/366);
+		} else if (this.exp <= 101100) {
+			return (int) (175 + (this.exp-80100)/500);
+		} else if (this.exp <= 102800) {
+			return (int) (217 + (this.exp-101100)/1700);
+		} else {
+			return (int) (218 + (this.exp-102800)/2000);
+		}
 	}
 	
 	public static int expThisLevel(int l) {
