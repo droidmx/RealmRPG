@@ -10,6 +10,7 @@ public abstract class Command {
 	public static void RegisterCommands() {
 		commands.add(new CharacterSelectCommand());
 		commands.add(new CharacterCreateCommand());
+		commands.add(new CharacterLevelUpCommand());
 	}
 
 	public abstract String getCommand();
