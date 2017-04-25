@@ -119,6 +119,25 @@ public class Character {
 	
 	public int hp, mp, att, def, spd, dex, vit, wis;
 	
+	public Character(ClassEnum clss) {
+		this.clss = clss;
+		this.exp = 0;
+		this.level = Character.getLevelForExp(this.exp);
+		this.weapon = 0;
+		this.ability = 0;
+		this.armor = 0;
+		this.ring = 0;
+		this.inventory = new int[8];
+		this.hp = clss.LIFE_START;
+		this.mp = clss.MANA_START;
+		this.att = clss.ATT_START;
+		this.def = clss.DEF_START;
+		this.spd = clss.SPD_START;
+		this.dex = clss.DEX_START;
+		this.vit = clss.VIT_START;
+		this.wis = clss.WIS_START;
+	}
+	
 	public Character(ClassEnum clss, int exp, int weapon, int ability, int armor, int ring, int[] inventory,
 			int hp, int mp, int att, int def, int spd, int dex, int vit, int wis) {
 		this.clss = clss;
