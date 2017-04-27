@@ -9,20 +9,22 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonIOException;
 import com.google.gson.JsonSyntaxException;
 
-public class EncounterData {
+public class Enemy {
 	
 	public String name;
-	public EnemyData[] enemies;
+	public int hp;
+	public int def;
+	public int exp;
 	
-	public static EncounterData getData(String name){
-		File encounterFolder = new File("./data/encounters");
-		encounterFolder.mkdirs();
-		File encounterFile = new File(encounterFolder, name + ".json");
+	public static Enemy getData(String name){
+		File enemyFolder = new File("./data/enemies");
+		enemyFolder.mkdirs();
+		File enemyFile = new File(enemyFolder, name + ".json");
 		
-		if(encounterFile.exists()){
+		if(enemyFile.exists()){
 			Gson gson = new GsonBuilder().create();
 			try {
-				return gson.fromJson(new FileReader(encounterFile), EncounterData.class);
+				return gson.fromJson(new FileReader(enemyFile), Enemy.class);
 			} catch (JsonSyntaxException | JsonIOException | FileNotFoundException e) {
 				e.printStackTrace();
 				return null;

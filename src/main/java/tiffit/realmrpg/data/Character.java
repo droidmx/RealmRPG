@@ -1,5 +1,7 @@
 package tiffit.realmrpg.data;
 
+import tiffit.realmrpg.encounters.Encounter;
+
 public class Character {
 
 	public static enum ClassEnum{
@@ -239,5 +241,10 @@ public class Character {
 	
 	public static int totalExpThisLevel(int l) {
 		return (l >= 20) ? 0 : (int) (l/2.0 * (100 + (l-1)*100));
+	}
+	
+	
+	public void fight(Encounter e) {
+		
 	}
 }
