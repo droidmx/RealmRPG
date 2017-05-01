@@ -3,6 +3,7 @@ package tiffit.realmrpg.encounters;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.util.ArrayList;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -12,7 +13,7 @@ import com.google.gson.JsonSyntaxException;
 public class Encounter {
 	
 	public String name;
-	public Enemy[] enemies;
+	public ArrayList<Enemy> enemies;
 	
 	public static Encounter getData(String name){
 		File encounterFolder = new File("./data/encounters");
@@ -30,5 +31,22 @@ public class Encounter {
 		} else {
 			return null;
 		}
+	}
+	
+	public Enemy getFighting() {
+		if (enemies.size() > 0) {
+			return enemies.get(0);
+		} return null;
+	}
+	
+	public int takeDamage(int e) {
+		Enemy f = this.getFighting();
+		f.hp -= e;
+		if (f.isDead()) {
+			int xp = f.exp;
+			enemies.remove(enemies.indexOf(f));
+			return xp;
+		}
+		return 0;
 	}
 }
