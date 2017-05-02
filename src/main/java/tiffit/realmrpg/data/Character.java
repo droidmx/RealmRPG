@@ -8,59 +8,73 @@ public class Character {
 		Rogue(150, 100, 10, 0, 15, 15, 15, 10,
 				720, 252, 50, 25, 75, 75, 40, 50,
 				20, 2, 0, 0, 1, 1, 0, 0,
-				30, 8, 2, 0, 2, 2, 1, 2),
+				30, 8, 2, 0, 2, 2, 1, 2,
+				"dagger", "cloak", "leather"),
 		Archer(130, 100, 12, 0, 12, 12, 12, 10,
 				700, 252, 75, 25, 50, 50, 40, 50,
 				20, 2, 1, 0, 0, 0, 0, 0,
-				30, 8, 2, 0, 2, 2, 1, 2),
+				30, 8, 2, 0, 2, 2, 1, 2,
+				"bow", "quiver", "leather"),
 		Wizard(100, 100, 12, 0, 10, 15, 12, 12,
 				670, 385, 75, 25, 50, 75, 40, 60,
 				20, 5, 1, 0, 0, 1, 0, 0,
-				30, 15, 2, 0, 2, 2, 1, 2),
+				30, 15, 2, 0, 2, 2, 1, 2,
+				"staff", "spell", "robe"),
 		Priest(100, 100, 12, 0, 12, 12, 10, 15,
 				670, 385, 50, 25, 55, 55, 40, 75,
 				20, 5, 0, 0, 1, 0, 0, 1,
-				30, 15, 2, 0, 2, 2, 1, 2),
+				30, 15, 2, 0, 2, 2, 1, 2,
+				"wand", "tome", "robe"),
 		Warrior(200, 100, 15, 0, 7, 10, 10, 10,
 				770, 252, 75, 25, 50, 50, 75, 70,
 				20, 2, 1, 0, 0, 0, 1, 0,
-				30, 8, 2, 0, 2, 2, 2, 2),
+				30, 8, 2, 0, 2, 2, 2, 2,
+				"sword", "helm", "heavy"),
 		Knight(200, 100, 15, 0, 7, 10, 10, 10,
 				770, 252, 50, 40, 50, 50, 75, 50,
 				20, 2, 1, 0, 0, 0, 1, 0,
-				30, 8, 2, 0, 2, 2, 2, 2),
+				30, 8, 2, 0, 2, 2, 2, 2,
+				"sword", "shield", "heavy"),
 		Paladin(200, 100, 12, 0, 12, 10, 10, 10,
 				770, 252, 50, 30, 55, 45, 40, 75,
 				20, 2, 1, 0, 0, 0, 0, 1,
-				30, 8, 2, 0, 2, 2, 1, 2),
+				30, 8, 2, 0, 2, 2, 1, 2,
+				"sword", "seal", "heavy"),
 		Assassin(150, 100, 12, 0, 15, 15, 15, 10,
 				720, 252, 60, 25, 75, 75, 40, 60,
 				20, 2, 0, 0, 1, 1, 0, 1,
-				30, 8, 2, 0, 2, 2, 1, 2),
+				30, 8, 2, 0, 2, 2, 1, 2,
+				"dagger", "poison", "leather"),
 		Necromancer(100, 100, 12, 0, 10, 15, 10, 12,
 				670, 385, 75, 25, 50, 60, 30, 75,
 				20, 5, 1, 0, 0, 1, 0, 1,
-				30, 15, 2, 0, 2, 2, 1, 2),
+				30, 15, 2, 0, 2, 2, 1, 2,
+				"staff", "skull", "robe"),
 		Huntress(130, 100, 12, 0, 12, 12, 12, 10,
 				700, 252, 75, 25, 50, 50, 40, 50,
 				20, 2, 1, 0, 0, 0, 0, 0,
-				30, 8, 2, 0, 2, 2, 1, 2),
+				30, 8, 2, 0, 2, 2, 1, 2,
+				"bow", "trap", "leather"),
 		Mystic(100, 100, 10, 0, 12, 10, 15, 15,
 				670, 385, 60, 25, 60, 55, 40, 75,
 				20, 5, 1, 0, 0, 0, 0, 1,
-				30, 15, 2, 0, 2, 2, 1, 2),
+				30, 15, 2, 0, 2, 2, 1, 2,
+				"staff", "orb", "robe"),
 		Trickster(150, 100, 10, 0, 12, 15, 12, 12,
 				720, 252, 65, 25, 75, 75, 40, 60,
 				20, 2, 1, 0, 1, 1, 0, 0,
-				30, 8, 2, 0, 2, 2, 1, 2),
+				30, 8, 2, 0, 2, 2, 1, 2,
+				"dagger", "prism", "leather"),
 		Sorcerer(100, 100, 10, 0, 12, 12, 10, 15,
 				670, 385, 60, 25, 60, 60, 75, 60,
 				20, 5, 1, 0, 1, 0, 1, 1,
-				30, 15, 2, 0, 2, 2, 2, 2),
+				30, 15, 2, 0, 2, 2, 2, 2,
+				"wand", "scepter", "robe"),
 		Ninja(150, 100, 15, 0, 10, 12, 10, 12,
 				720, 252, 70, 25, 60, 70, 40, 70,
 				20, 2, 1, 0, 0, 1, 0, 1,
-				30, 8, 2, 0, 2, 2, 1, 2);
+				30, 8, 2, 0, 2, 2, 1, 2,
+				"katana", "star", "leather");
 		
 		public final int LIFE_START, MANA_START, ATT_START, DEF_START, SPD_START, DEX_START, VIT_START, WIS_START;
 		public final int LIFE_MAX, MANA_MAX, ATT_MAX, DEF_MAX, SPD_MAX, DEX_MAX, VIT_MAX, WIS_MAX;
@@ -69,10 +83,13 @@ public class Character {
 		public final int LIFE_GAIN_MIN, MANA_GAIN_MIN, ATT_GAIN_MIN, DEF_GAIN_MIN,
 			SPD_GAIN_MIN, DEX_GAIN_MIN, VIT_GAIN_MIN, WIS_GAIN_MIN;
 		
+		public final String weapon, ability, armor;
+		
 		private ClassEnum(int l, int m, int a, int d, int s, int x, int v, int w,
 				int lx, int mx, int ax, int dx, int sx, int xx, int vx, int wx,
 				int ln, int mn, int an, int dn, int sn, int xn, int vn, int wn,
-				int lm, int mm, int am, int dm, int sm, int xm, int vm, int wm) {
+				int lm, int mm, int am, int dm, int sm, int xm, int vm, int wm,
+				String wep, String abl, String arm) {
 			this.LIFE_START = l;
 			this.MANA_START = m;
 			this.ATT_START = a;
@@ -105,6 +122,9 @@ public class Character {
 			this.DEX_GAIN_MIN = xn;
 			this.VIT_GAIN_MIN = vn;
 			this.WIS_GAIN_MIN = wn;
+			this.weapon = wep;
+			this.ability = abl;
+			this.armor = arm;
 		}
 	}
 	
@@ -246,5 +266,15 @@ public class Character {
 	
 	public void fight(Encounter e) {
 		
+	}
+	
+	public int getDPS() {
+		int dps = (int) (20 * (0.5 + this.att/50.0));
+		dps *= this.getAPS();
+		return dps;
+	}
+	
+	public int getAPS() {
+		return (int) (1.5 + 6.5 * (this.dex/75.0));
 	}
 }

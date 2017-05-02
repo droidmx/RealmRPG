@@ -1,11 +1,20 @@
 package tiffit.realmrpg.items;
 
-public class Item {
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonIOException;
+import com.google.gson.JsonSyntaxException;
+
+public abstract class Item {
     
-    private final String type;
-    private final String name;
-    private final int id;
-    private final String description;
+    public final String type;
+    public final String name;
+    public final int id;
+    public final String description;
     
     public Item(String name, int id, String description) {
         this("item", name, id, description);
@@ -18,7 +27,20 @@ public class Item {
         this.description = description;
     }
     
-    public String getType() { return type; }
-    public String getName() { return name; }
-
+	public static Item getData(String id){
+		File itemFolder = new File("./data/items");
+		itemFolder.mkdirs();
+		File itemFile = new File(itemFolder, id + ".json");
+		
+		if(itemFile.exists()){
+			Gson gson = new GsonBuilder().create();
+			try {
+				return gson.fromJson(new FileReader(itemFile), Item.class);
+			} catch (JsonSyntaxException | JsonIOException | FileNotFoundException e) {
+				e.printStackTrace();
+				return null;
+			}
+		} return null;
+	}
+    
 }
