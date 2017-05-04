@@ -1,6 +1,7 @@
 package tiffit.realmrpg.data;
 
 import tiffit.realmrpg.encounters.Encounter;
+import tiffit.realmrpg.items.Item;
 
 public class Character {
 
@@ -269,7 +270,8 @@ public class Character {
 	}
 	
 	public int getDPS() {
-		int dps = (int) (20 * (0.5 + this.att/50.0));
+		Item wp = Item.getData(this.weapon);
+		int dps = (int) ((wp.minDamage + Math.random() * (wp.maxDamage-wp.minDamage)) * (0.5 + this.att/50.0));
 		dps *= this.getAPS();
 		return dps;
 	}

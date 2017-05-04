@@ -1,1 +1,1 @@
-{"type":"sword","name":"Sword of Acclaim","id":0xb0b,"description":"A great sword of recognition, forged by the gods for the champions of humankind."}
+{"type":"sword","name":"Sword of Acclaim","id":0xb0b,"description":"A great sword of recognition, forged by the gods for the champions of humankind.","minDamage":220,"maxDamage":270,"stats":[],"shots":1}
