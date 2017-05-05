@@ -84,7 +84,7 @@ public class Character {
 		public final int LIFE_GAIN_MIN, MANA_GAIN_MIN, ATT_GAIN_MIN, DEF_GAIN_MIN,
 			SPD_GAIN_MIN, DEX_GAIN_MIN, VIT_GAIN_MIN, WIS_GAIN_MIN;
 		
-		public final String weapon, ability, armor;
+		public final String WEAPON_TYPE, ABILITY_TYPE, ARMOR_TYPE;
 		
 		private ClassEnum(int l, int m, int a, int d, int s, int x, int v, int w,
 				int lx, int mx, int ax, int dx, int sx, int xx, int vx, int wx,
@@ -123,9 +123,9 @@ public class Character {
 			this.DEX_GAIN_MIN = xn;
 			this.VIT_GAIN_MIN = vn;
 			this.WIS_GAIN_MIN = wn;
-			this.weapon = wep;
-			this.ability = abl;
-			this.armor = arm;
+			this.WEAPON_TYPE = wep;
+			this.ABILITY_TYPE = abl;
+			this.ARMOR_TYPE = arm;
 		}
 	}
 	
