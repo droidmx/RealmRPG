@@ -10,6 +10,8 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonIOException;
 import com.google.gson.JsonSyntaxException;
 
+import tiffit.realmrpg.items.StatIncrease.Stat;
+
 public abstract class Item {
     
     public final String type;
@@ -35,6 +37,23 @@ public abstract class Item {
         this.minDamage = minDmg;
         this.maxDamage = maxDmg;
         this.stats = StatIncrease.parse(stats);
+    }
+    
+    public int getStatBonus(Stat s) {
+    	for (StatIncrease si : stats) {
+    		if (si.getStat().equals(s)) {
+    			return si.getValue();
+    		}
+    	} return 0;
+    }
+    
+    public int getStatBonus(String s) {
+    	try {
+    		Stat st = Stat.valueOf(s);
+    		return this.getStatBonus(st);
+    	} catch (IllegalArgumentException e) {
+    		return 0;
+    	}
     }
     
 	public static Item getData(int id){

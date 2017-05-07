@@ -271,12 +271,23 @@ public class Character {
 	
 	public int getDPS() {
 		Item wp = Item.getData(this.weapon);
-		int dps = (int) ((wp.minDamage + Math.random() * (wp.maxDamage-wp.minDamage)) * (0.5 + this.att/50.0));
+		Item ab = Item.getData(this.ability);
+		Item ar = Item.getData(this.armor);
+		Item rn = Item.getData(this.ring);
+		int dps = (int) ((wp.minDamage + Math.random() * (wp.maxDamage-wp.minDamage)) *
+				(0.5 + (this.att + wp.getStatBonus("ATT") + ab.getStatBonus("ATT") + ar.getStatBonus("ATT") +
+				rn.getStatBonus("ATT"))/50.0));
 		dps *= this.getAPS();
 		return dps;
 	}
 	
 	public int getAPS() {
-		return (int) (1.5 + 6.5 * (this.dex/75.0));
+		Item wp = Item.getData(this.weapon);
+		Item ab = Item.getData(this.ability);
+		Item ar = Item.getData(this.armor);
+		Item rn = Item.getData(this.ring);
+		return (int) (1.5 + 6.5 *
+				((this.dex + wp.getStatBonus("DEX") + ab.getStatBonus("DEX") + ar.getStatBonus("DEX") +
+				rn.getStatBonus("DEX"))/75.0)); 
 	}
 }
